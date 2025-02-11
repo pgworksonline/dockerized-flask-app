@@ -1,0 +1,20 @@
+name: Pull Docker Image from Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pull-docker-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Pull Docker Image
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker pull pgworksonline/flask-app:latest
+
