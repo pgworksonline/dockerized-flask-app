@@ -1,23 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #23b2b8;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Custom Web Page</title>
+  <!-- Google Fonts for a custom look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #4a90e2, #9013fe);
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    section h2 {
+      color: #4a90e2;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 10px;
+    }
+    /* Home Section: Two-Column Layout */
+    .home-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .home-text, .home-image {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+    .home-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    /* About Section: Two-Column Layout */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .about-text, .about-image {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .cta {
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 15px;
+    }
+    .cta:hover {
+      background: #357ab8;
+    }
+    .toggle-section {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #e8f0fe;
+      border-left: 5px solid #4a90e2;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    /* Media Query for Mobile Devices */
+    @media (max-width: 768px) {
+      nav {
+        position: static;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .home-container,
+      .about-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 20px;
+        padding: 15px;
+      }
+    }
+
+    /* Existing styles for .about-container, .about-text, and .about-image remain unchanged */
+
+/* New styles for the toggle container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  justify-content: space-between; /* Distributes space between button and image */
+  width: 100%;
+}
+
+.toggle-container .toggle-image {
+  margin-left: 20px;
+}
+
+.toggle-container .toggle-image img {
+  width: 150px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 8px;
+}
+
+  </style>
 </head>
 <body>
-    <h1>Welcome My brother Moses</h1>
-    <p>This is a simple Flask template running on a container babyyyy!!.</p>
+  <header>
+    <h1>Welcome to PGWORKSONLINE.DEV</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Home Section with Two Halves: Text & Image -->
+    <section id="home">
+      <h2>Home</h2>
+      <div class="home-container">
+        <div class="home-text">
+          <p>
+            Hi, I'm Peter Garcia, a DevOps Engineer passionate about automation, cloud computing, and infrastructure as code. I specialize in building scalable, secure, and efficient deployment pipelines that bridge the gap between development and operations.
+
+With expertise in Docker, Kubernetes, Terraform, Ansible, and CI/CD pipelines, I help businesses streamline their software delivery process, ensuring faster, more reliable deployments. Whether it's optimizing cloud infrastructure, automating workflows, or enhancing system reliability, I thrive on solving complex challenges with innovative solutions.
+
+Explore my work, skills, and projects, and let's connect to create something amazing together! 🚀
+          </p>
+        </div>
+        <div class="home-image">
+          <img src="https://media.istockphoto.com/id/1303169188/photo/devops-concept.jpg?s=612x612&w=0&k=20&c=RzgMNp4TqIzpjZddZ4Lqyun9uXg5P1uF586BBIy1Fu8=" alt="Home Image">
+        </div>
+      </div>
+    </section>
+    <!-- About Section with Two Halves: Text & Image -->
+	  <section id="about">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+	A dedicated DevOps Engineer with 2 years of experience in automating infrastructure, optimizing CI/CD pipelines, and enhancing cloud deployments. I specialize in containerization (Docker, Kubernetes), infrastructure as code (Terraform, Ansible), and cloud platforms like AWS, Azure, and GCP.
+
+My passion lies in streamlining software delivery through robust CI/CD pipelines, ensuring high availability, scalability, and security. I thrive in fast-paced environments, collaborating with development and operations teams to bridge the gap between code and production seamlessly.
+
+With a strong foundation in Linux, scripting (Bash/Python), monitoring, and security best practices, I am always exploring new ways to improve system reliability and efficiency. Whether it's automating deployments, optimizing cloud costs, or designing scalable microservices architectures, I am committed to driving innovation in DevOps.
+Let's connect and build the future of automation together! 🚀
+      </p>
+      <!-- Toggle container for button and image -->
+      <div class="toggle-container">
+        <button class="cta" id="toggleButton">Learn More</button>
+        <div class="toggle-image">
+          <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="Learn More Image">
+        </div>
+      </div>
+      <div class="toggle-section" id="toggleSection">
+        <p>
+         Below are links to my GitHub account where you'll find repositories of projects I've created.
+
+	 <a href="https://github.com/pgworksonline/dockerized-flask-app" target="_blank">dockerized-flask-app</a>
+        </p>
+      </div>
+    </div>
+    <div class="about-image">
+      <img src="https://t3.ftcdn.net/jpg/02/60/42/82/360_F_260428264_7nU3AJOgVxMb3f2e3yMJo9OF0BVD9hB6.jpg" alt="About Image">
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        If you have any questions, feel free to reach out! You can contact us via email at
+        <a href="mailto:info@example.com">pgworksonline@gmail.com</a> or call me at (323) 821-7816.
+      </p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 PGWORKSONLINE.DEV
+  </footer>
+  <script>
+    // Toggle the visibility of the additional information section in the About section.
+    document.getElementById('toggleButton').addEventListener('click', function() {
+      var section = document.getElementById('toggleSection');
+      if (section.style.display === 'block') {
+        section.style.display = 'none';
+        this.textContent = 'Learn More';
+      } else {
+        section.style.display = 'block';
+        this.textContent = 'Hide Details';
+      }
+    });
+  </script>
 </body>
 </html>
 
